@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--default-font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  /* COLOR PALETTE */
+  --label-default--light: #130b43;
+  --label-secondary--light: #5c5589;
+  --navbar__border-bottom-color: #c8d5ef;
+  --alert--light: #d85050;
+  --caution--light: #e48900;
+  /* FONT */
+  --default-font-family: "Poppins", sans-serif;
+  --default-font-size: 16px;
+  --semi-bold: 600;
+  --notification-font-size: 13px;
+  /* MARGINS */
+  --general-x-margin: 32px;
+
+  /* SIZES */
+  --reputation-button-height: 31px;
+  --reputation-button-width: 97px;
+  --reputation-button-border-size:3px;
+
+  /* FILTERS */
+  --change-svg-color-to-label-secondary--light: invert(37%) sepia(19%)
+    saturate(1190%) hue-rotate(208deg) brightness(85%) contrast(85%);
+  --change-svg-color-to-white: invert(100%) sepia(100%) saturate(1%)
+    hue-rotate(42deg) brightness(105%) contrast(101%);
+  --change-svg-color-to-caution--light: invert(58%) sepia(24%) saturate(5742%)
+    hue-rotate(9deg) brightness(98%) contrast(101%);
+}
+
+button {
+  background: none;
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+}
+
+/* GENERAL PURPOSE CLASSES */
+.flex-row-align {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.non-selectable{
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none; 
+}

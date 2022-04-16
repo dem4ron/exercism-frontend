@@ -1,0 +1,176 @@
+.nav-bar,
+.nav-bar__button,
+.nav-bar__button-collection,
+.nav-bar__button__icon,
+.nav-bar__brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-bar {
+  border-bottom: 1px solid var(--navbar__border-bottom-color);
+  height: 66px;
+  justify-content: space-between;
+}
+
+.nav-bar--left {
+  margin-left: var(--general-x-margin);
+}
+
+.nav-bar--right {
+  margin-right: var(--general-x-margin);
+}
+
+.nav-bar--right button,
+.nav-bar__reputation-button {
+  margin-left: 48px;
+}
+
+.nav-bar__brand svg {
+  margin-right: 5px;
+}
+
+.nav-bar__brand{
+  margin-right:30px;
+}
+
+.nav-bar__button {
+  font-size: var(--default-font-size);
+  font-family: inherit;
+  font-weight: var(--semi-bold);
+  color: var(--label-secondary--light);
+}
+
+.nav-bar__button__icon {
+  height: 100%;
+  width: 65px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar__button__label--selected {
+  color: var(--label-default--light);
+}
+
+.nav-bar__button__icon__svg,
+.nav-bar__button__icon__svg--selected {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-bar__button__icon__active-indicator {
+  position: absolute;
+  top: 1%;
+  animation: dot-it 200ms forwards;
+}
+
+.nav-bar__button__icon__svg {
+  filter: var(--change-svg-color-to-label-secondary--light);
+}
+
+.nav-bar__button__icon__svg--selected {
+  filter: var(--change-svg-color-to-white);
+}
+
+/*========================= USER MENU =========================*/
+.nav-bar__user-menu-button img + img{
+  margin-left: 20px;
+}
+
+.nav-bar__profile-picture {
+  border-radius: 50%;
+}
+
+/*========================= INDICATOR BUTTONS =========================*/
+.nav-bar__indicator-button {
+  position: relative;
+}
+
+.nav-bar__indicator-button__red-dot {
+  right: 0px;
+  top: -2px;
+}
+
+/*=========================  NOTIFICATION BELL =========================*/
+
+.nav-bar__notification-bell__red-dot {
+  right: -10px;
+  top: -10px;
+}
+
+.nav-bar__notification-bell,
+.nav-bar__notification-bell--ringing {
+  box-shadow: 0 4px 16px 0 rgb(79 114 205 / 30%);
+  width: 42px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  position: relative;
+}
+
+.nav-bar__notification-bell--ringing {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    linear-gradient(0deg, #fff4e3, #fff4e3);
+  box-shadow: 0px 4px 24px 0px #9c822666;
+}
+
+.nav-bar__notification-bell--ringing img {
+  filter: var(--change-svg-color-to-caution--light);
+}
+
+/*=========================  REPUTATION BUTTON =========================*/
+.nav-bar__reputation-button {
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(180deg, #cc00ff 0%, #3300ff 100%);
+  height: calc(
+    var(--reputation-button-height) + var(--reputation-button-border-size)
+  );
+  padding: 3px;
+  
+}
+
+.nav-bar__reputation-button:hover{
+  cursor: pointer;
+}
+
+.nav-bar__reputation-button,
+.nav-bar__reputation-button__inner-bg {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.nav-bar__reputation-button__inner-bg {
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+  background: var(--label-default--light);
+  padding:0 16px;
+}
+
+.nav-bar__reputation-button__inner-bg span {
+  font-family: var(--default-font-family);
+  font-size: var(--default-font-size);
+  color: white;
+  font-weight: var(--semi-bold);
+  margin-left:8px;
+  
+}
+
+
+.nav-bar__reputation-button__red-dot {
+  top: -9px;
+  right: -9px;
+}

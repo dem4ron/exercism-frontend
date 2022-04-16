@@ -1,0 +1,25 @@
+.the-red-dot{
+   background-color: var(--alert--light);
+   border-radius: 50%;
+   font-family: var(--default-font-family);
+   font-size: var(--notification-font-size);
+   font-weight:var(--semi-bold);
+   color:white;
+   animation: dot-it 200ms forwards; 
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   position:absolute;
+}
+
+@keyframes dot-it {
+   from{
+      transform:scale(0);
+   }to{
+      transform:scale(1);
+   }
+}
+
+.bordered{
+   border: 3px solid white;
+}
