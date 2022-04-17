@@ -1,26 +1,112 @@
-/*========================= CSS FILE FOR TESTIMONIALS PAGE  =========================*/
+/*========================= CSS FILE FOR TESTIMONIALS PAGE =========================*/
 
-/*========================= HEADER  =========================*/
-.testimonials__header *{
-   margin: 8px 0;
+/*========================= GENERAL =========================*/
+.testimonials {
+  margin: var(--general-x-margin);
 }
 
-.testimonials__header__counter{
-   padding: 3px 12px;
-   color: var(--label-secondary--light);
-   font-weight:var(--medium);
-   border: 1px solid var(--testimonial-counter-border);
-   border-radius:100px;
+/*========================= HEADER =========================*/
+.testimonials__header * {
+  margin: 8px 0;
 }
 
-.testimonials__header div h1{
-   margin: 0 16px;
+.testimonials__header__counter {
+  padding: 3px 12px;
+  color: var(--label-secondary--light);
+  font-weight: var(--medium);
+  border: 1px solid var(--testimonial-counter-border);
+  border-radius: 100px;
 }
 
-/*========================= CONTAINER  =========================*/
+.testimonials__header div h1 {
+  margin: 0 16px;
+}
 
-.testimonials__container{
-   border-radius:8px;
-   box-shadow: 0px 4px 42px 0px #4F72CD26;
+/*========================= CONTAINER =========================*/
+.testimonials__container {
+  border-radius: 8px;
+  box-shadow: 0px 4px 42px 0px #4f72cd26;
+  margin: var(--general-x-margin) 0;
+}
 
+.testimonials__container__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--testimonial__container__header-border--light);
+}
+
+/*=============== LANGUAGE SELECT BUTTON ===============*/
+.testimonials__container__header__language-select img:nth-of-type(1) {
+  margin-right: 15px;
+}
+.testimonials__container__header__language-select {
+  margin-right: 24px;
+}
+
+/*=============== FILTER INPUT ===============*/
+.testimonials__container__header__filter-input {
+  width: 380px;
+}
+
+.testimonials__container__header__filter-input:focus-within {
+  box-shadow: 0px 0px 2px 2px #2e57e840;
+  background: white;
+  outline: 1px solid var(--blue-light);
+  outline-offset: -1px;
+}
+
+.testimonials__container__header__filter-input input {
+  width: 100%;
+}
+.testimonials__container__header__filter-input img {
+  margin-right: 16px;
+}
+
+.testimonials__container__header__filter-input input,
+.testimonials__container__header__sort-options button,
+.testimonials__container__header__sort-button {
+  color: var(--label-secondary--light);
+  font-family: var(--default-font-family);
+  font-size: var(--default-font-size);
+  font-weight: var(--light);
+}
+
+.testimonials__container__header__filter-input input {
+  color: var(--label-default--light);
+}
+
+.testimonials__container__header__filter-input,
+.testimonials__container__header__sort-options button,
+.testimonials__container__header__sort-button {
+  background: var(--label-default-text--dark);
+  padding: 12px 21px;
+  border-radius: 5px;
+}
+
+/*=============== SORT BUTTON ===============*/
+.testimonials__container__header__sort-button,
+.testimonials__container__header__sort-options button {
+  width: 348px;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.testimonials__container__header__sort-options button {
+  outline: 4px solid white;
+  outline-offset: -4px;
+  border-radius: 8px;
+}
+.testimonials__container__header__sorter {
+  position: relative;
+}
+.testimonials__container__header__sort-options {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0px 4px 42px 0px #4f72cd26;
+  position: absolute;
+  top: 125%;
+  border-radius: 8px;
+  animation: dot-it 200ms forwards;
 }

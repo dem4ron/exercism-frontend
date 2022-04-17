@@ -17,13 +17,17 @@ code {
   /* COLOR PALETTE */
   --label-default--light: #130b43;
   --label-secondary--light: #5c5589;
+  --label-default-text--dark: #F0F3F9;
   --navbar__border-bottom-color: #c8d5ef;
   --testimonial-counter-border:#CBC9D9;
+  --testimonial__container__header-border--light:#D5D8E4;
   --alert--light: #d85050;
   --caution--light: #e48900;
+  --blue-light:#2E57E8;
   /* FONT */
   --default-font-family: "Poppins", sans-serif;
   --default-font-size: 16px;
+  --light:400;
   --medium: 500;
   --semi-bold: 600;
   --notification-font-size: 13px;
@@ -50,6 +54,37 @@ button {
 }
 button:hover {
   cursor: pointer;
+}
+
+input{
+  border:none;
+  background:none;
+}
+input:focus{
+  outline:none;
+  
+}
+
+
+::-webkit-input-placeholder { /* Edge */
+  color: var(--label-secondary--light);
+  font-family: var(--default-font-family);
+  font-size: var(--default-font-size);
+  font-weight:var(--light);
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--label-secondary--light);
+  font-family: var(--default-font-family);
+  font-size: var(--default-font-size);
+  font-weight:var(--light);
+}
+
+::placeholder {
+  color: var(--label-secondary--light);
+  font-family: var(--default-font-family);
+  font-size: var(--default-font-size);
+  font-weight:var(--light);
 }
 
 h1{
