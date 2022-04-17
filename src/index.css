@@ -18,11 +18,13 @@ code {
   --label-default--light: #130b43;
   --label-secondary--light: #5c5589;
   --navbar__border-bottom-color: #c8d5ef;
+  --testimonial-counter-border:#CBC9D9;
   --alert--light: #d85050;
   --caution--light: #e48900;
   /* FONT */
   --default-font-family: "Poppins", sans-serif;
   --default-font-size: 16px;
+  --medium: 500;
   --semi-bold: 600;
   --notification-font-size: 13px;
   /* MARGINS */
@@ -50,6 +52,10 @@ button:hover {
   cursor: pointer;
 }
 
+h1{
+  color:var(--label-default--light);
+}
+
 /* GENERAL PURPOSE CLASSES */
 .flex-row-align {
   display: flex;
@@ -58,6 +64,12 @@ button:hover {
   height: 100%;
 }
 
+.flex-column-align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
 .absolute-center {
   position: absolute;
   top: 50%;
