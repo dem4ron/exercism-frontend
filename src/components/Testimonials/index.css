@@ -29,12 +29,16 @@
   margin: var(--general-x-margin) 0;
 }
 
-.testimonials__container__header {
-  display: flex;
+.testimonials__container__header, .testimonials__container__footer {
   justify-content: space-between;
   padding: 16px 24px;
-  border-bottom: 1px solid var(--testimonial__container__header-border--light);
 }
+
+.testimonials__container__header{
+  border-bottom: 1px solid var(--border--light);
+}
+
+
 
 /*=============== LANGUAGE SELECT BUTTON ===============*/
 .testimonials__container__header__language-select img:nth-of-type(1) {
@@ -83,6 +87,14 @@
   padding: 12px 21px;
   border-radius: 5px;
 }
+.testimonials__container__header__sort-options button{
+  background: white;
+}
+
+.testimonials__container__header__sort-options .--selected{
+  background: var(--label-default-text--dark);
+}
+
 
 /*=============== SORT BUTTON ===============*/
 .testimonials__container__header__sort-button,
@@ -97,10 +109,13 @@
   outline-offset: -4px;
   border-radius: 8px;
 }
+
 .testimonials__container__header__sorter {
   position: relative;
 }
+
 .testimonials__container__header__sort-options {
+  z-index:99;
   display: flex;
   flex-direction: column;
   background: white;
@@ -108,5 +123,50 @@
   position: absolute;
   top: 125%;
   border-radius: 8px;
-  animation: dot-it 200ms forwards;
+  animation: dot-it 80ms forwards;
 }
+
+/*========================= FOOTER/PAGINATION =========================*/
+.testimonials__container__footer{
+  border-top: 1px solid var(--border--light);
+}
+
+.testimonials__container__footer__pages>div, .testimonials__container__footer button{
+  padding:8px 16px;
+  margin:0 6px;
+  color: var(--label-secondary--light);
+  font-family:inherit;
+  font-weight: var(--medium);
+  font-size: var(--pagination-font-size);
+}
+
+.testimonials__container__footer button{
+  border: 1px solid var(--border--light);
+  border-radius:5px;
+}
+
+.testimonials__container__footer img{
+  filter: var(--change-svg-color-to-label-secondary--light);
+}
+
+.testimonials__container__footer button:disabled{
+  filter: var(--change-svg-color-to-label-tertiary--light);
+}
+
+.testimonials__container__footer button:disabled{
+box-shadow: none;
+color:var(--label-tertiary--light);
+background:var(--divider--light);
+border:none;
+}
+.testimonials__container__footer .--stepper{
+  box-shadow: 0px 1px 0px 1px #CBC9D999;
+}
+
+.testimonials__container__footer .--active{
+color: var(--label-default--light);
+border: 1px solid var(--label-tertiary--light);
+background:var(--highlight--light);
+}
+
+
