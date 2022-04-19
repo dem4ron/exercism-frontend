@@ -1,3 +1,4 @@
+import { useChangeOrder } from "@/hooks";
 import { useState, useCallback } from "react";
 import {
   LanguageSelectButton,
@@ -7,19 +8,9 @@ import {
 } from "./particles";
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const [sortOption, setSortOption] = useState({
-    label: "Sort by newest first",
-    value: "newest_first",
-  });
+  const { currSortObj: sortObj, setSortObj } = useChangeOrder();
   const handleClick = useCallback(() => setIsOpen((o) => !o), []);
-  const handleSort = useCallback(
-    (sortOption: { label: string; value: string }) => {
-      setSortOption(sortOption);
-      setIsOpen(false);
-    },
-    []
-  );
+  const onClose = useCallback(() => setIsOpen(false), []);
 
   return (
     <div className="testimonials__container__header flex-row-align">
@@ -28,9 +19,13 @@ export function Header() {
         <SearchInput />
       </div>
       <div className="testimonials__container__header__sorter">
-        <SortButton handleClick={handleClick} sortOption={sortOption} />
+        <SortButton handleClick={handleClick} sortObj={sortObj} />
         {isOpen && (
-          <SortOptionsPopper handleSort={handleSort} sortOption={sortOption} />
+          <SortOptionsPopper
+            setSortObj={setSortObj}
+            sortObj={sortObj}
+            onClose={onClose}
+          />
         )}
       </div>
     </div>

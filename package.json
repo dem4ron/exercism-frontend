@@ -1,5 +1,6 @@
 {
-  "name": "exercism_app",
+  "name": "exercism-frontend-job-application",
+  "author": "Aron Demeter",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -8,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "zustand": "^4.0.0-rc.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

@@ -1,14 +1,22 @@
+import { OrderByObj } from "@/stores/store";
+
 interface Props {
-  handleSort: (sortOption: { label: string; value: string }) => void;
-  sortOption: { label: string; value: string };
+  onClose: () => void;
+  sortObj: OrderByObj;
+  setSortObj: ({}: OrderByObj) => void;
 }
-export function SortOptionsPopper({ handleSort, sortOption }: Props) {
+
+
+export function SortOptionsPopper({ setSortObj, sortObj, onClose }: Props) {
   return (
     <div className="testimonials__container__header__sort-options">
       {SORT_OPTIONS.map((i) => (
         <button
-          onClick={() => handleSort(i)}
-          className={`${i.value === sortOption.value ? "--selected" : ""}`}
+          onClick={() => {
+            setSortObj(i);
+            onClose();
+          }}
+          className={`${i.value === sortObj.value ? "--selected" : ""}`}
         >
           {i.label}
         </button>
@@ -17,7 +25,7 @@ export function SortOptionsPopper({ handleSort, sortOption }: Props) {
   );
 }
 
-const SORT_OPTIONS = [
+const SORT_OPTIONS: OrderByObj[] = [
   {
     label: "Sort by newest first",
     value: "newest_first",

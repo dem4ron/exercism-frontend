@@ -1,12 +1,12 @@
 import BigDownArrow from "@/assets/raw/down-arrow--big.svg";
-import { memo,  useRef } from "react";
+import { memo } from "react";
 
 interface Props{
-  sortOption:{ label: string; value: string };
+  sortObj:{ label: string; value: string };
   handleClick: ()=>void;
 }
 
-function _SortButton({sortOption, handleClick}:Props) {
+function _SortButton({sortObj, handleClick}:Props) {
 
 
   return (
@@ -14,7 +14,7 @@ function _SortButton({sortOption, handleClick}:Props) {
         className="testimonials__container__header__sort-button flex-row-align"
         onClick={handleClick}
       >
-        <div>{sortOption.label} </div>
+        <div>{sortObj.label} </div>
         <img src={BigDownArrow} width="24px" />
       </button>
 

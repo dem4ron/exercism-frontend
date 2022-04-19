@@ -1,17 +1,25 @@
-import { ReactNode } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 import LeftArrow from "@/assets/raw/left-arrow.svg";
 import RightArrow from "@/assets/raw/right-arrow.svg";
 
-type direction = "previous" | "next";
 interface Props {
-  kind?: direction;
+  kind?: "previous" | "next";
   disabled?: boolean;
   active?: boolean;
   children?: ReactNode;
+  onClick: MouseEventHandler;
 }
-export function PaginationButton({ kind, disabled, active, children }: Props) {
+
+export function PaginationButton({
+  kind,
+  disabled,
+  active,
+  children,
+  onClick,
+}: Props) {
   return (
     <button
+      onClick={onClick}
       disabled={disabled}
       className={`${active ? "--active" : ""} ${kind ? "--stepper" : ""}`}
     >
@@ -48,7 +56,6 @@ function Next() {
   );
 }
 
-
-export function More(){
-  return (<div>...</div>)
+export function More() {
+  return <div>...</div>;
 }
