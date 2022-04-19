@@ -1,32 +1,16 @@
 import { ApiService } from "@/api";
-import { TestimonialsParams, order } from "@/api";
+import {TestimonialsState} from './storeTypes';
 import create from "zustand";
 import { devtools } from "zustand/middleware";
+import { SORT_OPTIONS } from "@/components/Testimonials/particles/Container/particles/Header/particles";
 
-export type OrderByObj = {
-  label: string;
-  value: "newest_first" | "oldest_first";
-};
-
-export interface TestimonialsState {
-  status: "loading" | "fulfilled" | "rejected";
-  testimonials: {};
-  page: number;
-  orderBy: OrderByObj;
-  searchQuery: string;
-  track: string;
-  pageTotalCount: number;
-  populateTestimonials: (params: TestimonialsParams) => void;
-  turnPage: (pageNumber: number) => void;
-  setOrderBy: ({}:OrderByObj) => void;
-}
 
 export const useTestimonialsStore = create<TestimonialsState>()(
   devtools(
     (set) => ({
       status: "loading",
       page: 1,
-      orderBy: { label: "Sort by newest first", value: "newest_first" },
+      orderBy: SORT_OPTIONS[0],
       searchQuery: "",
       track: "",
       pageTotalCount: 0,
@@ -55,6 +39,9 @@ export const useTestimonialsStore = create<TestimonialsState>()(
 
       setOrderBy: (sobj) => {
         set({ orderBy: sobj }, false, "Changing order");
+      },
+      setSearchQuery: (val) => {
+        set({ searchQuery: val }, false, "Searching for specific cool stuff");
       },
     }),
     { name: "Testimonials store" }

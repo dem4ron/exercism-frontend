@@ -1,4 +1,4 @@
-import { useTestimonialsStore } from "@/stores/store";
+import { useTestimonialsStore } from "@/store";
 import { useCallback } from "react";
 
 export function useChangeOrder(){

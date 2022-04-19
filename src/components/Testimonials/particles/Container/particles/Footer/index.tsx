@@ -19,18 +19,23 @@ export function Footer() {
           </PaginationButton>
         ))}
         {pageButtons[pageButtons.length - 1] < maxPage - 2 && <More />}
+
+{maxPage>1&&
         <PaginationButton
           onClick={() => pick(maxPage)}
           active={page === maxPage}
         >
           {maxPage}
         </PaginationButton>
+}
       </div>
-      <PaginationButton
-        onClick={next}
-        disabled={page === maxPage}
-        kind="next"
-      />
+      {
+        <PaginationButton
+          onClick={next}
+          disabled={page === maxPage}
+          kind="next"
+        />
+      }
     </div>
   );
 }

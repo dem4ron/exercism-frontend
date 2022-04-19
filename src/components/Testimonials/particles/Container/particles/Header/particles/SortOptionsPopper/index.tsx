@@ -6,7 +6,6 @@ interface Props {
   setSortObj: ({}: OrderByObj) => void;
 }
 
-
 export function SortOptionsPopper({ setSortObj, sortObj, onClose }: Props) {
   return (
     <div className="testimonials__container__header__sort-options">
@@ -25,13 +24,13 @@ export function SortOptionsPopper({ setSortObj, sortObj, onClose }: Props) {
   );
 }
 
-const SORT_OPTIONS: OrderByObj[] = [
+export const SORT_OPTIONS: OrderByObj[] = [
   {
-    label: "Sort by newest first",
+    label: "Sort by Most Recent",
     value: "newest_first",
   },
   {
-    label: "Sort by oldest first",
+    label: "Sort by Least Recent",
     value: "oldest_first",
   },
 ];

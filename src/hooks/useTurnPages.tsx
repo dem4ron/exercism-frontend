@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { useTestimonialsStore } from "@/stores/store";
+import { useTestimonialsStore } from "@/store";
 
 export function useTurnPages() {
   // STORE

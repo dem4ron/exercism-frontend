@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from "react";
-import { useTestimonialsStore } from "@/stores/store";
+import { useTestimonialsStore } from "@/store";
 
 export function useFetchData() {
   const populateTestimonials = useTestimonialsStore(
