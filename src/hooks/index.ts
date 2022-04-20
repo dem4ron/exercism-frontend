@@ -4,3 +4,4 @@ export * from './useChangeOrder';
 export * from './useSearchQuery';
 export * from './useResults';
 export * from './useToggle';
+export * from './useTrackSelector';
