@@ -8,15 +8,28 @@ export function TrackSelector({ toggleIsOpen }: { toggleIsOpen: () => void }) {
 
   return (
     <div className="testimonials__track-selector">
-      {results &&
-        results.tracks.map((i) => (
+      {results && (
+        <>
           <TrackRadio
-            selected={track === i}
-            onTrackSelect={() => {setTrack(i);toggleIsOpen()}}
-            slug={i}
+            slug=""
+            selected={track === ""}
+            onTrackSelect={() => {setTrack("");toggleIsOpen()}}
             trackCount={results.track_counts}
           />
-        ))}
+          {results.tracks.map((i) => (
+            <TrackRadio
+              key={i}
+              selected={track === i}
+              onTrackSelect={() => {
+                setTrack(i);
+                toggleIsOpen();
+              }}
+              slug={i}
+              trackCount={results.track_counts}
+            />
+          ))}
+        </>
+      )}
     </div>
   );
 }

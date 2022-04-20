@@ -1,3 +1,5 @@
+import LanguageIcon from "@/assets/raw/exercism-language-icon.svg";
+import { useMemo } from "react";
 interface Props {
   slug: string;
   trackCount: { [key: string]: number };
@@ -10,25 +12,39 @@ export function TrackRadio({
   selected,
   onTrackSelect,
 }: Props) {
+  const noSlug = useMemo(() => slug === "", []);
+
   return (
     <div
       className={`flex-row-align track-radio ${selected ? "--selected" : ""}`}
       onClick={onTrackSelect}
     >
       <div className="flex-row-align">
-        <input checked={selected} type="radio" value={slug} />
+        <input checked={selected} readOnly type="radio" value={slug} />
 
         <img
           width="42px"
-          src={`https://dg8krxphbh767.cloudfront.net/tracks/${slug}.svg`}
+          src={
+            noSlug
+              ? LanguageIcon
+              : `https://dg8krxphbh767.cloudfront.net/tracks/${slug}.svg`
+          }
         />
-        <label htmlFor={slug}>{capitalize(slug)}</label>
+        <label htmlFor={slug}>{noSlug ? "All" : capitalize(slug)}</label>
       </div>
-      <div className="testimonials__header__counter">{trackCount[slug]}</div>
+      <div className="testimonials__header__counter">
+        {noSlug ? sumOf(trackCount): trackCount[slug]}
+      </div>
     </div>
   );
 }
 
 function capitalize(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+
+function sumOf(object:{}):number{
+  let values:number[] =  Object.values(object)
+  return values.reduce((a:number, b:number)=>a+b);
 }

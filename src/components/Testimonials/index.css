@@ -108,8 +108,8 @@
   transform: rotate(0deg);
   transition: transform 200ms ease-out;
 }
-.testimonials__container__header__sort-button .--is-open,
-.testimonials__container__header__language-select>.--is-open{
+.testimonials__container__header__language-select>.--is-open,
+.testimonials__container__header__sort-button .--is-open{
   transform: rotate(180deg);
   transition: transform 200ms ease-out;
 }

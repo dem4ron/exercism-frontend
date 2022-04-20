@@ -23,7 +23,7 @@ export function LanguageSelectButton({
         }
         width="42px"
       />
-      <img src={DownArrow} className={isOpen ? "down-arrow-is-open" : ""} width="13px" />
+      <img src={DownArrow} className={isOpen ? "--is-open" : ""} width="13px" />
     </button>
   );
 }
