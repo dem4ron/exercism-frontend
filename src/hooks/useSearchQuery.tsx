@@ -5,6 +5,9 @@ export function useSearchQuery(debouncedValue: string) {
   const setSearchQuery = useTestimonialsStore(
     useCallback((store) => store.setSearchQuery, [])
   );
+  const turnPage = useTestimonialsStore(
+    useCallback((store) => store.turnPage, [])
+  );
 
   useEffect(() => {
     if (debouncedValue.length > 0) {
@@ -12,5 +15,6 @@ export function useSearchQuery(debouncedValue: string) {
     } else {
       setSearchQuery("");
     }
+    turnPage(1);
   }, [debouncedValue]);
 }

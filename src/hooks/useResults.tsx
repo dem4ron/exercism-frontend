@@ -7,6 +7,7 @@ export function useResults() {
     useCallback(store => store.testimonials, [])
   );
   const status = useTestimonialsStore(useCallback(store => store.status, []));
+  const init = useTestimonialsStore(useCallback(store => store.init, []));
 
-  return { results, status };
+  return { results, status, init };
 }

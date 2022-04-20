@@ -1,5 +1,6 @@
-import { useChangeOrder } from "@/hooks";
+import { useChangeOrder, useResults } from "@/hooks";
 import { useState, useCallback } from "react";
+import Loader from "../Content/Loader";
 import {
   LanguageSelectButton,
   SearchInput,
@@ -9,8 +10,12 @@ import {
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { currSortObj: sortObj, setSortObj } = useChangeOrder();
+  
   const handleClick = useCallback(() => setIsOpen((o) => !o), []);
   const onClose = useCallback(() => setIsOpen(false), []);
+
+  const {status} = useResults();
+  
 
   return (
     <div className="testimonials__container__header flex-row-align">
@@ -32,6 +37,7 @@ export function Header() {
           />
         )}
       </div>
+     { status==="loading"&&<Loader/>}
     </div>
   );
 }

@@ -1,0 +1,26 @@
+.loader {
+  z-index: 100;
+  position: absolute;
+  background: #fbfcfe;
+  width: 100%;
+  height: var(--testimonials-container__content-height);
+  top: 100%;
+  left: 0%;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader > img {
+  animation: spin-it 1000ms infinite linear;
+}
+
+@keyframes spin-it {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

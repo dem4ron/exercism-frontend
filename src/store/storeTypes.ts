@@ -8,6 +8,7 @@ export interface TestimonialsState {
   orderBy: OrderByObj;
   searchQuery: string;
   track: string;
+  init:boolean;
   pageTotalCount: number;
   populateTestimonials: (params: TestimonialsParams) => void;
   turnPage: (pageNumber: number) => void;

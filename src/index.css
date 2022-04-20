@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+
 body {
   margin: 0;
   padding: 0;
@@ -15,19 +16,22 @@ code {
 
 :root {
   /* COLOR PALETTE */
-  --label-default--light: #130b43;
-  --label-secondary--light: #5c5589;
+  --label-default--light: #130B43;
+  --label-secondary--light: #5C5589;
   --label-tertiary--light:#76709F;
   --label-default-text--dark: #F0F3F9;
   --divider--light: #E0E0ED;
-  --navbar__border-bottom-color: #c8d5ef;
+  --navbar__border-bottom-color: #C8D5EF;
   --testimonial-counter-border:#CBC9D9;
   --testimonial-row-border:#EAECF3;
+  --testimonial-row-hover-background:#F4F7FD;
   --border--light:#D5D8E4;
   --highlight--light:#E1EBFF;
-  --alert--light: #d85050;
-  --caution--light: #e48900;
+  --alert--light: #D85050;
+  --caution--light: #E48900;
   --blue-light:#2E57E8;
+  --loader-background:#FBFCFE;
+
 
   /* FONT */
   --default-font-family: "Poppins", sans-serif;
@@ -41,10 +45,11 @@ code {
   /* MARGINS */
   --general-x-margin: 32px;
 
-  /* SIZES */
+  /* DIMENSIONS */
   --reputation-button-height: 31px;
   --reputation-button-width: 97px;
   --reputation-button-border-size:3px;
+  --testimonials-container__content-height:640px;
 
   /* FILTERS */
   --change-svg-color-to-label-secondary--light: invert(37%) sepia(19%)
@@ -113,12 +118,13 @@ h1{
   align-items: center;
   height: 100%;
 }
-.absolute-center {
+
+/* .absolute-center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .non-selectable{
   -webkit-user-select: none;  /* Chrome all / Safari all */

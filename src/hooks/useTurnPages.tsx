@@ -3,7 +3,6 @@ import { useTestimonialsStore } from "@/store";
 
 export function useTurnPages() {
   // STORE
-  const initPage = useTestimonialsStore(useCallback((store) => store.page, []));
   const maxPage = useTestimonialsStore(
     useCallback((store) => store.pageTotalCount, [])
   );
@@ -12,7 +11,7 @@ export function useTurnPages() {
   );
 
   // LOCAL
-  const [page, setPage] = useState(initPage);
+  const [page, setPage] = useState(1);
   const [pageButtons, setPageButtons] = useState<number[]>([]);
 
   // EFFECT
@@ -22,18 +21,6 @@ export function useTurnPages() {
   }, [page, maxPage]);
 
   // FNS
-  const prev = useCallback(() => {
-    if (page > 1) {
-      setPage((p) => (p -= 1));
-    }
-  }, []);
-
-  const next = useCallback(() => {
-    if (page < maxPage) {
-      setPage((p) => (p += 1));
-    }
-  }, []);
-
   const pick = useCallback((picked: number) => {
     setPage(picked);
   }, []);
@@ -51,5 +38,5 @@ export function useTurnPages() {
     []
   );
 
-  return { prev, next, pick, maxPage, page, pageButtons };
+  return { pick, maxPage, page, pageButtons };
 }

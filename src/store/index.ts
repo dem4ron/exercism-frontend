@@ -1,9 +1,8 @@
 import { ApiService } from "@/api";
-import {TestimonialsState} from './storeTypes';
+import { TestimonialsState } from "./storeTypes";
 import create from "zustand";
 import { devtools } from "zustand/middleware";
 import { SORT_OPTIONS } from "@/components/Testimonials/particles/Container/particles/Header/particles";
-
 
 export const useTestimonialsStore = create<TestimonialsState>()(
   devtools(
@@ -14,6 +13,7 @@ export const useTestimonialsStore = create<TestimonialsState>()(
       searchQuery: "",
       track: "",
       pageTotalCount: 0,
+      init: true,
       testimonials: {},
       populateTestimonials: async (params) => {
         set({ status: "loading" }, false, "Start loading");
@@ -27,7 +27,7 @@ export const useTestimonialsStore = create<TestimonialsState>()(
             false,
             "Fetch testimonials"
           );
-          set({ status: "fulfilled" }, false, "End loading");
+          set({ status: "fulfilled", init: false }, false, "End loading");
         } catch {
           set({ status: "rejected" }, false, "Request got rejected");
         }

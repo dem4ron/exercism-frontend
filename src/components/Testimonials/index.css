@@ -37,6 +37,7 @@
 
 .testimonials__container__header {
   border-bottom: 1px solid var(--border--light);
+  position:relative;
 }
 
 /*=============== LANGUAGE SELECT BUTTON ===============*/
@@ -179,13 +180,51 @@
 
 /*========================= CONTENT =========================*/
 
-/*=============== TESTIMONIAL ROW ===============*/
-
-.testimonial-row {
-  padding: 9px 20px;
-  border-bottom: 1px solid var(--testimonial-row-border);
+.testimonials__container__content{
+  position:relative;
+  height:640px;
+  overflow-y:scroll;
 }
 
+/*=============== TESTIMONIAL ROW ===============*/
+
+
+
+.testimonial-row {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 9px 20px;
+  border-bottom: 1px solid var(--testimonial-row-border);
+  color: var(--label-secondary--light);
+}
+
+.testimonial-row:hover{
+  cursor:pointer;
+  background:var(--testimonial-row-hover-background);
+
+}
+
+.testimonial-row--left {
+  width: 30%;
+}
+
+.testimonial-row--center {
+  width: 50%;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.testimonial-row--right {
+  width: 20%;
+  justify-content: right;
+  color: var(--label-secondary--light);
+}
+
+.testimonial-row--right > div {
+  margin-right: 60px;
+}
 .testimonial-row--left > .track-img-container {
   margin: 0 26px 0 10px;
   width: 32px;
@@ -212,7 +251,7 @@
   font-weight: var(--medium);
 }
 .testimonial-row--left > .handle-title-container div:nth-of-type(2) {
-  color: var(--label-secondary--light);
   font-size: var(--pagination-font-size);
   font-weight: var(--light);
 }
+
