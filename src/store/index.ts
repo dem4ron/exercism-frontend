@@ -45,6 +45,9 @@ export const useTestimonialsStore = create<TestimonialsState>()(
       setSearchQuery: (val) => {
         set({ searchQuery: val }, false, "Searching for specific cool stuff");
       },
+      setTrack:(track)=>{
+        set({track}, false, "Selecting track")
+      }
     }),
     { name: "Testimonials store" }
   )

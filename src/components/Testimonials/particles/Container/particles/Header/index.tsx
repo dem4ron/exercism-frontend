@@ -1,43 +1,54 @@
-import { useChangeOrder, useResults } from "@/hooks";
-import { useState, useCallback } from "react";
+import { useChangeOrder, useResults, useToggle } from "@/hooks";
 import Loader from "../Content/Loader";
 import {
   LanguageSelectButton,
   SearchInput,
   SortButton,
   SortOptionsPopper,
+  TrackSelector,
 } from "./particles";
-export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const { currSortObj: sortObj, setSortObj } = useChangeOrder();
-  
-  const handleClick = useCallback(() => setIsOpen((o) => !o), []);
-  const onClose = useCallback(() => setIsOpen(false), []);
 
-  const {status} = useResults();
-  
+export function Header() {
+  const { currSortObj: sortObj, setSortObj } = useChangeOrder();
+
+  const [isTrackSelectorOpen, toggleTrackSelector] = useToggle();
+  const [isSortOptionsOpen, toggleSortOptions] = useToggle();
+
+  const { status } = useResults();
 
   return (
     <div className="testimonials__container__header flex-row-align">
       <div className="testimonials__container__header--left flex-row-align">
-        <LanguageSelectButton />
+        
+        <LanguageSelectButton
+          toggleIsOpen={toggleTrackSelector}
+          isOpen={isTrackSelectorOpen}
+        />
+
+        {isTrackSelectorOpen && (
+          <TrackSelector toggleIsOpen={toggleTrackSelector} />
+        )}
+
         <SearchInput />
+
       </div>
+
       <div className="testimonials__container__header__sorter">
         <SortButton
-          handleClick={handleClick}
-          isOpen={isOpen}
+          toggleIsOpen={toggleSortOptions}
+          isOpen={isSortOptionsOpen}
           sortObj={sortObj}
         />
-        {isOpen && (
+        {isSortOptionsOpen && (
           <SortOptionsPopper
             setSortObj={setSortObj}
             sortObj={sortObj}
-            onClose={onClose}
+            toggleIsOpen={toggleSortOptions}
           />
         )}
       </div>
-     { status==="loading"&&<Loader/>}
+
+      {status === "loading" && <Loader />}
     </div>
   );
 }

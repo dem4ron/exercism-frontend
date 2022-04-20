@@ -3,15 +3,15 @@ import { memo } from "react";
 
 interface Props {
   sortObj: { label: string; value: string };
-  handleClick: () => void;
+  toggleIsOpen: () => void;
   isOpen: boolean;
 }
 
-function _SortButton({ sortObj, handleClick, isOpen }: Props) {
+function _SortButton({ sortObj, toggleIsOpen, isOpen }: Props) {
   return (
     <button
       className="testimonials__container__header__sort-button flex-row-align"
-      onClick={handleClick}
+      onClick={toggleIsOpen}
     >
       <div>{sortObj.label} </div>
       <img

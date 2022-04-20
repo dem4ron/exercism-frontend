@@ -14,7 +14,7 @@ export interface TestimonialsState {
   turnPage: (pageNumber: number) => void;
   setOrderBy: ({}: OrderByObj) => void;
   setSearchQuery: (val: string) => void;
-  // resetPage:()=>void
+  setTrack: (track:string)=>void;
 }
 
 export type OrderByObj = {

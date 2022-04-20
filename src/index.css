@@ -16,6 +16,8 @@ code {
 
 :root {
   /* COLOR PALETTE */
+  --default-background:white;
+
   --label-default--light: #130B43;
   --label-secondary--light: #5C5589;
   --label-tertiary--light:#76709F;
