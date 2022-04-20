@@ -2,28 +2,18 @@ import { useCallback, useEffect, useState } from "react";
 import { useTestimonialsStore } from "@/store";
 
 export function useTurnPages() {
-  // STORE
   const maxPage = useTestimonialsStore(
     useCallback((store) => store.pageTotalCount, [])
   );
-  const turnPage = useTestimonialsStore(
-    useCallback((store) => store.turnPage, [])
-  );
+  const pick = useTestimonialsStore(useCallback((store) => store.turnPage, []));
+  const page = useTestimonialsStore(useCallback((store) => store.page, []));
 
-  // LOCAL
-  const [page, setPage] = useState(1);
   const [pageButtons, setPageButtons] = useState<number[]>([]);
 
   // EFFECT
   useEffect(() => {
-    turnPage(page);
     setPageButtons(generatePageButtons(1, maxPage, page));
   }, [page, maxPage]);
-
-  // FNS
-  const pick = useCallback((picked: number) => {
-    setPage(picked);
-  }, []);
 
   const generatePageButtons = useCallback(
     (min: number, max: number, picked: number) => {

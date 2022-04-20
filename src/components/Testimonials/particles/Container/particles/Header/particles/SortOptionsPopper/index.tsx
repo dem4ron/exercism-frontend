@@ -1,4 +1,4 @@
-import { OrderByObj } from "@/stores/store";
+import { OrderByObj } from "@/store/storeTypes";
 
 interface Props {
   onClose: () => void;
@@ -8,12 +8,15 @@ interface Props {
 
 export function SortOptionsPopper({ setSortObj, sortObj, onClose }: Props) {
   return (
-    <div className="testimonials__container__header__sort-options">
+    <div className="testimonials__container__header__sort-options" onClick={e=>e.stopPropagation()}>
       {SORT_OPTIONS.map((i) => (
         <button
-          onClick={() => {
+          key={i.value}
+          onClick={(e) => {
             setSortObj(i);
             onClose();
+            e.stopPropagation()
+
           }}
           className={`${i.value === sortObj.value ? "--selected" : ""}`}
         >

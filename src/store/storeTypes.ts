@@ -3,7 +3,7 @@ import { TestimonialsParams } from "@/api";
 
 export interface TestimonialsState {
   status: "loading" | "fulfilled" | "rejected";
-  testimonials: Testimonials;
+  testimonials: Testimonials|null;
   page: number;
   orderBy: OrderByObj;
   searchQuery: string;
@@ -14,6 +14,7 @@ export interface TestimonialsState {
   turnPage: (pageNumber: number) => void;
   setOrderBy: ({}: OrderByObj) => void;
   setSearchQuery: (val: string) => void;
+  // resetPage:()=>void
 }
 
 export type OrderByObj = {
@@ -21,7 +22,7 @@ export type OrderByObj = {
   value: "newest_first" | "oldest_first";
 };
 
-type Testimonials = {
+export type Testimonials = {
   results: result[];
   pagination: pagination;
   tracks: string[];

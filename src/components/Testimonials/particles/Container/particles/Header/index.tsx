@@ -23,7 +23,7 @@ export function Header() {
         <LanguageSelectButton />
         <SearchInput />
       </div>
-      <div className="testimonials__container__header__sorter" onBlur={onClose}>
+      <div className="testimonials__container__header__sorter">
         <SortButton
           handleClick={handleClick}
           isOpen={isOpen}
