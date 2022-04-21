@@ -1,6 +1,17 @@
-/*========================= CSS FILE FOR TESTIMONIALS PAGE =========================*/
+/*========================= Indexes =========================
 
-/*========================= GENERAL =========================*/
+GENERAL: ln 14
+HEADER: ln 19
+CONTAINER/HEADER: ln 36
+  LANGUAGE SELECT BUTTON: ln 54
+  FILTER INPUT: ln 62
+  SORT BUTTON:  ln 109
+FOOTER/PAGINATION: ln 149
+CONTENT: ln 193
+  TESTIMONIAL ROW: ln 201
+  TRACK SELECTOR: ln 267
+
+=========================== GENERAL =========================*/
 .testimonials {
   margin: var(--general-x-margin);
 }
@@ -22,7 +33,7 @@
   margin: 0 16px;
 }
 
-/*========================= CONTAINER =========================*/
+/*========================= CONTAINER/HEADER =========================*/
 .testimonials__container {
   border-radius: 8px;
   box-shadow: 0px 4px 42px 0px #4f72cd26;
@@ -95,7 +106,7 @@
   background: var(--label-default-text--dark);
 }
 
-/*=============== SORT BUTTON ===============*/
+/*=============== SORT BUTTON ===============*/ 
 .testimonials__container__header__sort-button,
 .testimonials__container__header__sort-options button {
   width: 348px;
@@ -104,14 +115,13 @@
 }
 
 .testimonials__container__header__sort-button > img,
-.testimonials__container__header__language-select > img:nth-of-type(2) {
+.lang-select-down-arrow {
   transform: rotate(0deg);
-  transition: transform 200ms ease-out;
+  transition: transform 150ms ease-out;
 }
-.testimonials__container__header__language-select>.--is-open,
-.testimonials__container__header__sort-button .--is-open{
+.lang-select-down-arrow.--is-open,
+.testimonials__container__header__sort-button .--is-open {
   transform: rotate(180deg);
-  transition: transform 200ms ease-out;
 }
 
 .testimonials__container__header__sort-options button {
@@ -189,7 +199,7 @@
 }
 
 /*=============== TESTIMONIAL ROW ===============*/
-
+ 
 .testimonial-row {
   display: flex;
   flex-direction: row;
@@ -268,6 +278,7 @@
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  animation: dot-it 80ms forwards;
 }
 
 .track-radio {

@@ -1,5 +1,4 @@
-import { useResults } from "@/hooks";
-import { useTrackSelector } from "@/hooks";
+import { useResults, useTrackSelector } from "@/hooks";
 import { TrackRadio } from "./TrackRadio";
 
 export function TrackSelector({ toggleIsOpen }: { toggleIsOpen: () => void }) {
