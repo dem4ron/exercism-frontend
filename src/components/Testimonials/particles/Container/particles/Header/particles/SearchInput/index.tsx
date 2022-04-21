@@ -1,4 +1,5 @@
 import Search from "@/assets/raw/search.svg";
+import Image from "@/components/Common/Image";
 import { useDebounce, useSearchQuery } from "@/hooks";
 import { useState } from "react";
 
@@ -10,11 +11,12 @@ export function SearchInput() {
 
   return (
     <div className="testimonials__container__header__filter-input flex-row-align">
-      <img src={Search} />
+      <Image src={Search}  width="25px" height="25px" />
       <input
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        aria-label="search-input"
         placeholder="Filter by exercise title"
       />
     </div>

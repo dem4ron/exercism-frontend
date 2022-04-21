@@ -1,8 +1,12 @@
-const SVG_SRC = "src/assets/raw";
+import Dashboard from '@/assets/raw/dashboard.svg'
+import Tracks from '@/assets/raw/railroad.svg'
+import Mentoring from '@/assets/raw/conversation-chat.svg'
+import Contribute from '@/assets/raw/toys-lego.svg'
+
 
 export const BUTTON_COLLECTION = [
-  { icon: `${SVG_SRC}/dashboard.svg`, label: "Dashboard" },
-  { icon: `${SVG_SRC}/railroad.svg`, label: "Tracks" },
-  { icon: `${SVG_SRC}/conversation-chat.svg`, label: "Mentoring" },
-  { icon: `${SVG_SRC}/toys-lego.svg`, label: "Contribute" },
+  { icon: Dashboard, label: "Dashboard" },
+  { icon: Tracks, label: "Tracks" },
+  { icon: Mentoring, label: "Mentoring" },
+  { icon: Contribute, label: "Contribute" },
 ];

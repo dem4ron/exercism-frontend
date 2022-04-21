@@ -15,18 +15,16 @@ export function useTurnPages() {
     setPageButtons(generatePageButtons(1, maxPage, page));
   }, [page, maxPage]);
 
-  const generatePageButtons = useCallback(
-    (min: number, max: number, picked: number) => {
-      let arr = [];
-      for (let i = picked - 2; i <= picked + 2; i++) {
-        if (i > min && i < max) {
-          arr.push(i);
-        }
-      }
-      return arr;
-    },
-    []
-  );
-
+  
   return { pick, maxPage, page, pageButtons };
 }
+
+export const generatePageButtons = (min: number, max: number, picked: number) => {
+    let arr = [];
+    for (let i = picked - 2; i <= picked + 2; i++) {
+      if (i > min && i < max) {
+        arr.push(i);
+      }
+    }
+    return arr;
+  }

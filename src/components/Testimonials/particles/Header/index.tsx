@@ -1,3 +1,4 @@
+import Image from "@/components/Common/Image";
 import Divider from "@/assets/raw/divider.svg";
 import HappyBadge from "@/assets/raw/happy-badge.svg";
 import { useResults } from "@/hooks";
@@ -6,14 +7,15 @@ export function Header() {
 
   return (
     <div className="testimonials__header flex-column-align">
-      <img src={HappyBadge} />
+      <Image src={HappyBadge} width="64px" height="64px" />
       <div className="flex-row-align">
         <h1>Testimonials I've left</h1>
         <div className="testimonials__header__counter">
           {results ? results.pagination.total_count : 0}
         </div>
       </div>
-      <img src={Divider} />
+
+      <Image src={Divider} width="78px" height="18px" />
     </div>
   );
 }

@@ -17,7 +17,7 @@ CONTENT: ln 193
 }
 
 /*========================= HEADER =========================*/
-.testimonials__header * {
+.testimonials__header>* {
   margin: 8px 0;
 }
 
@@ -74,7 +74,7 @@ CONTENT: ln 193
 .testimonials__container__header__filter-input input {
   width: 100%;
 }
-.testimonials__container__header__filter-input img {
+.testimonials__container__header__filter-input >div {
   margin-right: 16px;
 }
 
@@ -85,8 +85,8 @@ CONTENT: ln 193
   font-family: var(--default-font-family);
   font-size: var(--default-font-size);
   font-weight: var(--light);
+  line-height: 22px;
 }
-
 .testimonials__container__header__filter-input input {
   color: var(--label-default--light);
 }
@@ -231,7 +231,7 @@ CONTENT: ln 193
   color: var(--label-secondary--light);
 }
 
-.testimonial-row--right > div {
+.testimonial-row--right > div:nth-of-type(1) {
   margin-right: 60px;
 }
 .testimonial-row--left > .track-img-container {

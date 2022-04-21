@@ -104,6 +104,7 @@ input:focus{
 
 h1{
   color:var(--label-default--light);
+  line-height:43px;
 }
 
 /* GENERAL PURPOSE CLASSES */

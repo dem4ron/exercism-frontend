@@ -6,7 +6,11 @@ export function Footer() {
 
   return (
     <div className="testimonials__container__footer flex-row-align">
-      <PaginationButton onClick={()=>pick(page-1)} disabled={page === 1} kind="previous" />
+      <PaginationButton
+        onClick={() => pick(page - 1)}
+        disabled={page === 1}
+        kind="previous"
+      />
 
       <div className="testimonials__container__footer__pages flex-row-align">
         <PaginationButton onClick={() => pick(1)} active={page === 1}>
@@ -18,7 +22,7 @@ export function Footer() {
             {i}
           </PaginationButton>
         ))}
-        {pageButtons[pageButtons.length - 1] < maxPage - 2 && <More />}
+        {pageButtons[pageButtons.length - 1] < maxPage - 1 && <More />}
 
         {maxPage > 1 && (
           <PaginationButton
@@ -31,7 +35,7 @@ export function Footer() {
       </div>
       {
         <PaginationButton
-          onClick={()=>pick(page+1)}
+          onClick={() => pick(page + 1)}
           disabled={page === maxPage}
           kind="next"
         />

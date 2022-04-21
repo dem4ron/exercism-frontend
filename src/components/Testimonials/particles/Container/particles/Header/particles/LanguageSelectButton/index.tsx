@@ -1,6 +1,6 @@
 import DownArrow from "@/assets/raw/down-arrow.svg";
 import LanguageIcon from "@/assets/raw/exercism-language-icon.svg";
-import { useTrackSelector } from "@/hooks/useTrackSelector";
+import { useTrackSelector } from "@/hooks";
 
 export function LanguageSelectButton({
   toggleIsOpen,
@@ -13,6 +13,7 @@ export function LanguageSelectButton({
   return (
     <button
       onClick={toggleIsOpen}
+      aria-label="lang-select-button"
       className="testimonials__container__header__language-select flex-row-align"
     >
       <img

@@ -91,7 +91,7 @@ REPUTATION BUTTON: ln 145
 }
 
 /*========================= USER MENU =========================*/
-.nav-bar__user-menu-button img + img {
+.nav-bar__user-menu-button div + div {
   margin-left: 20px;
 }
 
