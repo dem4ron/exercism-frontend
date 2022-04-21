@@ -12,17 +12,13 @@ export function SortOptionsPopper({
   toggleIsOpen,
 }: Props) {
   return (
-    <div
-      className="testimonials__container__header__sort-options"
-      onClick={(e) => e.stopPropagation()}
-    >
+    <div className="testimonials__container__header__sort-options">
       {SORT_OPTIONS.map((i) => (
         <button
           key={i.value}
           onClick={(e) => {
             setSortObj(i);
             toggleIsOpen();
-            e.stopPropagation();
           }}
           className={`${i.value === sortObj.value ? "--selected" : ""}`}
         >

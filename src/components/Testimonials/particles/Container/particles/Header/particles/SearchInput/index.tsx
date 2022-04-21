@@ -1,6 +1,5 @@
 import Search from "@/assets/raw/search.svg";
-import { useDebounce } from "@/hooks/useDebounce";
-import { useSearchQuery } from "@/hooks/useSearchQuery";
+import { useDebounce, useSearchQuery } from "@/hooks";
 import { useState } from "react";
 
 export function SearchInput() {

@@ -9,7 +9,7 @@ import {
 } from "./particles";
 
 export function Header() {
-  const { currSortObj: sortObj, setSortObj } = useChangeOrder();
+  const [sortObj, setSortObj] = useChangeOrder();
 
   const [isTrackSelectorOpen, toggleTrackSelector] = useToggle();
   const [isSortOptionsOpen, toggleSortOptions] = useToggle();
@@ -19,7 +19,6 @@ export function Header() {
   return (
     <div className="testimonials__container__header flex-row-align">
       <div className="testimonials__container__header--left flex-row-align">
-        
         <LanguageSelectButton
           toggleIsOpen={toggleTrackSelector}
           isOpen={isTrackSelectorOpen}
@@ -30,7 +29,6 @@ export function Header() {
         )}
 
         <SearchInput />
-
       </div>
 
       <div className="testimonials__container__header__sorter">

@@ -1,5 +1,5 @@
 import { useTurnPages } from "@/hooks";
-import { PaginationButton, More } from "./particles";
+import { PaginationButton, More } from "./PaginationButton";
 
 export function Footer() {
   const { pick, page, maxPage, pageButtons } = useTurnPages();

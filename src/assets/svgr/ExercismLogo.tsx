@@ -1,18 +1,15 @@
 import customSvgProps from "./interface";
-import { DEFAULT_COLOR } from "@/theme";
 
 const SvgExercismLogo = ({
   width = 30,
   height = 24,
-  strokeColor = DEFAULT_COLOR,
-  ...props
+  strokeColor = "#130B43",
 }: customSvgProps) => (
   <svg
     width={width}
     height={height}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    {...props}
   >
     <g clipPath="url(#exercism-logo_svg__a)" fill={strokeColor}>
       <path d="M16.771 15.36c0 1.016-.88 1.651-1.66 1.651-.779 0-1.714-.316-1.714-1.651v-.65h-1.026v.65c0 1.479 1.23 2.682 2.74 2.682 1.512 0 2.742-1.203 2.742-2.682v-.65h-1.082v.65ZM8.148 12.223c0-.971.842-1.76 1.876-1.76 1.034 0 1.875.79 1.875 1.76h1.182c0-1.583-1.37-2.87-3.057-2.87-1.686 0-3.058 1.287-3.058 2.87h1.182ZM17.886 12.223c0-.971.842-1.76 1.875-1.76 1.035 0 1.876.79 1.876 1.76h1.182c0-1.583-1.371-2.87-3.058-2.87-1.686 0-3.057 1.287-3.057 2.87h1.182Z" />

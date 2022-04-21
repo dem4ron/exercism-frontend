@@ -1,7 +1,11 @@
-import { DEFAULT_COLOR } from "@/theme";
 import customSvgProps from "./interface";
 
-const SvgExercismText = ({width=97, height=18, strokeColor=DEFAULT_COLOR}:customSvgProps) => (
+const SvgExercismText = ({
+  width = 97,
+  height = 18,
+  strokeColor = "#130B43",
+  
+}: customSvgProps) => (
   <svg
     width={width}
     height={height}
