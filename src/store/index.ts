@@ -18,18 +18,17 @@ export const useTestimonialsStore = create<TestimonialsState>()(
       populateTestimonials: async (params) => {
         set({ status: "loading" }, false, "Start loading");
         let res = await ApiService.getTestimonials(params);
-        window.history.replaceState({page:null}, "_","/" )
+        window.history.replaceState({ page: null }, "_", "/");
         try {
           set(
             {
               testimonials: res.data.testimonials,
               pageTotalCount: res.data.testimonials.pagination.total_pages,
-              
             },
             false,
             "Fetch testimonials"
           );
-          set({ status: "fulfilled", init: false}, false, "End loading");
+          set({ status: "fulfilled", init: false }, false, "End loading");
         } catch {
           set({ status: "rejected" }, false, "Request got rejected");
         }
@@ -43,11 +42,15 @@ export const useTestimonialsStore = create<TestimonialsState>()(
         set({ orderBy: sobj }, false, "Changing order");
       },
       setSearchQuery: (val) => {
-        set({ searchQuery: val }, false, "Searching for specific cool stuff");
+        set(
+          { searchQuery: val, page: 1 },
+          false,
+          "Searching for specific cool stuff while reseting page"
+        );
       },
-      setTrack:(track)=>{
-        set({track}, false, "Selecting track")
-      }
+      setTrack: (track) => {
+        set({ track, page: 1 }, false, "Selecting track, reseting page");
+      },
     }),
     { name: "Testimonials store" }
   )

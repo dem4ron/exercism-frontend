@@ -1,10 +1,10 @@
 import { useResults } from "@/hooks";
-import { useTrackSelector } from "@/hooks/useTrackSelector";
+import { useTrackSelector } from "@/hooks";
 import { TrackRadio } from "./TrackRadio";
 
 export function TrackSelector({ toggleIsOpen }: { toggleIsOpen: () => void }) {
   const { results } = useResults();
-  const { track, setTrack } = useTrackSelector();
+  const [track, setTrack] = useTrackSelector();
 
   return (
     <div className="testimonials__track-selector">
@@ -13,7 +13,10 @@ export function TrackSelector({ toggleIsOpen }: { toggleIsOpen: () => void }) {
           <TrackRadio
             slug=""
             selected={track === ""}
-            onTrackSelect={() => {setTrack("");toggleIsOpen()}}
+            onTrackSelect={() => {
+              setTrack("");
+              toggleIsOpen();
+            }}
             trackCount={results.track_counts}
           />
           {results.tracks.map((i) => (

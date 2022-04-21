@@ -1,19 +1,15 @@
-// import redDot from "@/assets/raw/red-dot.svg";
 import RedDot from "../RedDot";
-import { useCallback, useState } from "react";
+import { useToggle } from "@/hooks";
 interface Props {
   src: string;
 }
 export default function IndicatorToggleButton({ src }: Props) {
-  let init = Math.random()  > .5; 
-  const [toggle, setToggle] = useState(init);
-  const handleClick = useCallback(()=>{setToggle((t) => !t)},[])
+  let init = Math.random() > 0.5;
+  const [isOn, toggle] = useToggle(init);
+
   return (
-    <button
-      className="nav-bar__indicator-button"
-      onClick={handleClick}
-    >
-      {toggle && (
+    <button className="nav-bar__indicator-button" onClick={toggle}>
+      {isOn && (
         <RedDot
           className="nav-bar__indicator-button__red-dot"
           size="8px"

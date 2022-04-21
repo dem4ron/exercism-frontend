@@ -1,10 +1,2 @@
-export { default as Active } from "./Active";
-export { default as AlarmBell } from "./AlarmBell";
-export { default as ConversationChat } from "./ConversationChat";
-export { default as Dashboard } from "./Dashboard";
 export { default as ExercismLogo } from "./ExercismLogo";
 export { default as ExercismText } from "./ExercismText";
-export { default as MoodHappy } from "./MoodHappy";
-export { default as Railroad } from "./Railroad";
-export { default as TestMoodHappy } from "./TestMoodHappy";
-export { default as ToysLego } from "./ToysLego";

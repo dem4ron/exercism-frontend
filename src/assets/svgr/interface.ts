@@ -1,4 +1,3 @@
-
 export default interface customSvgProps {
   width?: number;
   height?: number;

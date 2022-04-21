@@ -1,23 +1,21 @@
-import bell from "@/assets/raw/alarm-bell.svg";
-import { useCallback, useState } from "react";
+import { useMemo } from "react";
+import { useCounter } from "@/hooks";
 import RedDot from "../RedDot";
+import bell from "@/assets/raw/alarm-bell.svg";
 
 export function NotificationBell() {
-  const [counter, setCounter] = useState(0);
-  const ringing = counter > 0; 
-  const handleClick = useCallback(() => {
-    setCounter((c) => (c += 1));
-  }, []);
+  const [counter, increment] = useCounter();
+  const ringing = useMemo(() => counter > 0, [counter]);
 
   return (
     <button
-      onClick={handleClick}
-      className={`nav-bar__notification-bell${ringing?"--ringing":""}`}
+      onClick={increment}
+      className={`nav-bar__notification-bell${ringing ? "--ringing" : ""}`}
     >
       {ringing && (
         <RedDot
           size="24px"
-          inside={`${counter>99?"99+":counter }`}
+          inside={`${counter > 99 ? "99+" : counter}`}
           className="nav-bar__notification-bell__red-dot"
         />
       )}

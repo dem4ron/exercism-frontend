@@ -9,7 +9,7 @@ export function LanguageSelectButton({
   isOpen: boolean;
   toggleIsOpen: () => void;
 }) {
-  const { track } = useTrackSelector();
+  const [track] = useTrackSelector();
   return (
     <button
       onClick={toggleIsOpen}
