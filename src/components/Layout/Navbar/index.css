@@ -40,7 +40,7 @@ REPUTATION BUTTON: ln 145
   margin-left: 48px;
 }
 
-/*========================= BRAND & NAVBUTTONS =========================*/ 
+/*========================= BRAND & NAVBUTTONS =========================*/
 .nav-bar__brand svg {
   margin-right: 5px;
 }
@@ -152,7 +152,9 @@ REPUTATION BUTTON: ln 145
   );
   padding: 3px;
 }
-
+.nav-bar__reputation-button:focus {
+  outline: none;
+}
 .nav-bar__reputation-button:hover {
   cursor: pointer;
 }

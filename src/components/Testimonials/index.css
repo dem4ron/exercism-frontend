@@ -9,7 +9,7 @@ CONTAINER/HEADER: ln 36
 FOOTER/PAGINATION: ln 149
 CONTENT: ln 193
   TESTIMONIAL ROW: ln 201
-  TRACK SELECTOR: ln 267
+  TRACK SELECTOR: ln 269
 
 =========================== GENERAL =========================*/
 .testimonials {
@@ -201,6 +201,7 @@ CONTENT: ln 193
 /*=============== TESTIMONIAL ROW ===============*/
  
 .testimonial-row {
+  display:-webkit-flex;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -227,7 +228,8 @@ CONTENT: ln 193
 
 .testimonial-row--right {
   width: 20%;
-  justify-content: right;
+  justify-content: flex-end;
+  text-align:right;
   color: var(--label-secondary--light);
 }
 
