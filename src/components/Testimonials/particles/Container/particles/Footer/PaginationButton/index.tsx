@@ -19,6 +19,7 @@ export function PaginationButton({
 }: Props) {
   return (
     <button
+      aria-label="pagination-button"
       onClick={onClick}
       disabled={disabled}
       className={`${active ? "--active" : ""} ${kind ? "--stepper" : ""}`}

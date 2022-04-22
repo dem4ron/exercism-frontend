@@ -2,8 +2,7 @@ import { Header, Container } from "./particles";
 import "./index.css";
 import { useFetchData } from "@/hooks/useFetchData";
 export function Testimonials() {
-
-   useFetchData();
+  useFetchData();
 
   return (
     <div className="testimonials">

@@ -10,10 +10,11 @@ interface Props {
 function _SortButton({ sortObj, toggleIsOpen, isOpen }: Props) {
   return (
     <button
+      aria-label="sort-button"
       className="testimonials__container__header__sort-button flex-row-align"
       onClick={toggleIsOpen}
     >
-      <div>{sortObj.label} </div>
+      <div>{sortObj.label}</div>
       <img
         src={BigDownArrow}
         className={isOpen ? "--is-open" : ""}
