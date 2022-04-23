@@ -2,16 +2,24 @@ export default function Image({
   width,
   height,
   src,
-  className
+  className,
+  alt,
 }: {
   width: string;
   height: string;
   src: string;
-  className?:string;
+  className?: string;
+  alt?: string;
 }) {
   return (
     <div style={{ width, height }}>
-      <img className={className} width={width} height={height} src={src} />
+      <img
+        className={className}
+        width={width}
+        alt={alt}
+        height={height}
+        src={src}
+      />
     </div>
   );
 }

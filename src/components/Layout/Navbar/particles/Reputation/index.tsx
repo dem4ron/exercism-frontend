@@ -12,7 +12,7 @@ export function Reputation() {
       onClick={increment}
     >
       <div className="nav-bar__reputation-button__inner-bg">
-        <Image src={reputationBadge} width="24px" height="25px" />
+        <Image src={reputationBadge} alt="reputation badge" width="24px" height="25px" />
         <span style={{lineHeight: "27px"}}>{counter >= 1000 ? `${counter / 1000}K` : counter}</span>
       </div>
       <RedDot

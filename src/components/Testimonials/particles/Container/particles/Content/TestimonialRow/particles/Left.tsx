@@ -14,11 +14,11 @@ export function Left({
   return (
     <div className="testimonial-row--left flex-row-align">
       <div className="track-img-container">
-        <img width="32px" src={trackImg} />
+        <img width="32px" alt="track image" src={trackImg} />
       </div>
 
       <div className="mentor-avatar-container">
-        <img width="42px" src={mentorAvatar} />
+        <img width="42px" alt={`${mentorHandle}'s avatar`} src={mentorAvatar} />
       </div>
 
       <div className= "handle-title-container">

@@ -7,14 +7,24 @@ interface Props {
 }
 
 export function TestimonialRow({ result }: Props) {
-
-// unpleasently fake routing
-const updateUrlHistory = useCallback(()=>{
-window.history.pushState({page:result.id}, "_", `/testimonial/${result.id}`)
-},[])
+  // unpleasently fake routing
+  const updateUrlHistory = useCallback(() => {
+    window.history.pushState(
+      { page: result.id },
+      "_",
+      `/testimonial/${result.id}`
+    );
+  }, []);
 
   return (
-    <a className="testimonial-row"  onClick={updateUrlHistory}>
+    <a
+      className="testimonial-row"
+      href="#"
+      onClick={(e) => {
+        e.preventDefault();
+        updateUrlHistory();
+      }}
+    >
       <Left
         trackImg={result.track.icon_url}
         mentorAvatar={result.mentor.avatar_url}

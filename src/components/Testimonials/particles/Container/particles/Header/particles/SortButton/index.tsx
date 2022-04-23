@@ -17,6 +17,7 @@ function _SortButton({ sortObj, toggleIsOpen, isOpen }: Props) {
       <div>{sortObj.label}</div>
       <img
         src={BigDownArrow}
+        alt="down arrow"
         className={isOpen ? "--is-open" : ""}
         width="24px"
       />

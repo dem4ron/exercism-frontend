@@ -3,7 +3,7 @@ import "./index.css"
 export default function Loader() {
   return (
     <div className="loader">
-      <img src={FixedSpinner} />
+      <img alt="spinner" src={FixedSpinner} />
     </div>
   );
 }

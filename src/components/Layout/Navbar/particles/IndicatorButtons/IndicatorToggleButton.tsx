@@ -2,8 +2,9 @@ import RedDot from "../RedDot";
 import { useToggle } from "@/hooks";
 interface Props {
   src: string;
+  alt:string;
 }
-export default function IndicatorToggleButton({ src }: Props) {
+export default function IndicatorToggleButton({ src, alt }: Props) {
   let init = Math.random() > 0.5;
   const [isOn, toggle] = useToggle(init);
 
@@ -16,7 +17,7 @@ export default function IndicatorToggleButton({ src }: Props) {
           bordered
         />
       )}
-      <img src={src} />
+      <img alt={alt} src={src} />
     </button>
   );
 }

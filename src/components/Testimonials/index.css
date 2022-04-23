@@ -201,7 +201,6 @@ CONTENT: ln 193
 /*=============== TESTIMONIAL ROW ===============*/
  
 .testimonial-row {
-  display:-webkit-flex;
   display: flex;
   flex-direction: row;
   align-items: center;

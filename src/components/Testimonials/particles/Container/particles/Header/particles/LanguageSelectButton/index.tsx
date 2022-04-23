@@ -17,6 +17,7 @@ export function LanguageSelectButton({
       className="testimonials__container__header__language-select flex-row-align"
     >
       <img
+        alt="exercism smiling language select"
         src={
           track === ""
             ? LanguageIcon
@@ -26,6 +27,7 @@ export function LanguageSelectButton({
       />
       <img
         src={DownArrow}
+        alt="down arrow"
         className={`lang-select-down-arrow ${isOpen ? "--is-open" : ""}`}
         width="13px"
       />

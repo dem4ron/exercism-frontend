@@ -11,6 +11,7 @@ export function NavButtons() {
           key={i.label}
           label={i.label}
           icon={i.icon}
+          alt={i.label + " button"}
           setSelected={setSelected}
           selected={selected === i.label}
         />

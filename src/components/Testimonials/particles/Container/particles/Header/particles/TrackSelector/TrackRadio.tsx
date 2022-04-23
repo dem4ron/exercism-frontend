@@ -23,6 +23,8 @@ export function TrackRadio({
         <input checked={selected} readOnly type="radio" value={slug} />
 
         <img
+          alt="programming language icon"
+          height="42px"
           width="42px"
           src={
             noSlug

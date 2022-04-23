@@ -11,7 +11,7 @@ export function SearchInput() {
 
   return (
     <div className="testimonials__container__header__filter-input flex-row-align">
-      <Image src={Search}  width="25px" height="25px" />
+      <Image src={Search} alt="magnifier" width="25px" height="25px" />
       <input
         type="text"
         value={value}

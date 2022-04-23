@@ -34,6 +34,7 @@ function Prev() {
     <div className="flex-row-align">
       <img
         src={LeftArrow}
+        alt="left arrow"
         width="12px"
         height="12px"
         style={{ marginRight: "10.4px" }}
@@ -49,6 +50,7 @@ function Next() {
       <div>Next</div>
       <img
         src={RightArrow}
+        alt="right arrow"
         width="12px"
         height="12px"
         style={{ marginLeft: "10.4px" }}

@@ -19,7 +19,7 @@ export function NotificationBell() {
           className="nav-bar__notification-bell__red-dot"
         />
       )}
-      <img src={bell} />
+      <img width="19px" height="23px" alt="notification bell" src={bell} />
     </button>
   );
 }

@@ -7,10 +7,11 @@ export function UserMenu() {
       <Image
         src={Erik}
         className="nav-bar__profile-picture"
+        alt="your profile picture"
         width="42px"
         height="42px"
       />
-      <Image src={verticalMenu} width="6px" height="18px" />
+      <Image src={verticalMenu} alt="vertical menu button" width="6px" height="18px" />
     </button>
   );
 }
