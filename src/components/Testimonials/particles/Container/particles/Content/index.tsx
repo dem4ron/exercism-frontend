@@ -1,17 +1,18 @@
 import { TestimonialRow } from "./TestimonialRow";
 import { useResults } from "@/hooks";
 import { NoResults } from "./NoResults";
+import { memo } from "react";
 
-export function Content() {
+function _Content() {
   const { results, init: coldStart } = useResults();
 
   return (
     <div className="testimonials__container__content">
-      {!coldStart && results && results.results.length > 0 ? (
-        results.results.map((i) => <TestimonialRow key={i.id} result={i} />)
-      ) : !coldStart&&(
-        <NoResults />
-      )}
+      {!coldStart && results && results.results.length > 0
+        ? results.results.map((i) => <TestimonialRow key={i.id} result={i} />)
+        : !coldStart && <NoResults />}
     </div>
   );
 }
+
+export const Content = memo(_Content);

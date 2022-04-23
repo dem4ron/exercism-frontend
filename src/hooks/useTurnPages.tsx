@@ -7,7 +7,6 @@ export function useTurnPages() {
   );
   const pick = useTestimonialsStore(useCallback((store) => store.turnPage, []));
   const page = useTestimonialsStore(useCallback((store) => store.page, []));
-
   const [pageButtons, setPageButtons] = useState<number[]>([]);
 
   // EFFECT
@@ -15,16 +14,19 @@ export function useTurnPages() {
     setPageButtons(generatePageButtons(1, maxPage, page));
   }, [page, maxPage]);
 
-  
   return { pick, maxPage, page, pageButtons };
 }
 
-export const generatePageButtons = (min: number, max: number, picked: number) => {
-    let arr = [];
-    for (let i = picked - 2; i <= picked + 2; i++) {
-      if (i > min && i < max) {
-        arr.push(i);
-      }
+export const generatePageButtons = (
+  min: number,
+  max: number,
+  picked: number
+) => {
+  let arr = [];
+  for (let i = picked - 2; i <= picked + 2; i++) {
+    if (i > min && i < max) {
+      arr.push(i);
     }
-    return arr;
   }
+  return arr;
+};

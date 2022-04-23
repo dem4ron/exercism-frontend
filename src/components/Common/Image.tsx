@@ -1,4 +1,6 @@
-export default function Image({
+import { memo } from "react";
+
+function _Image({
   width,
   height,
   src,
@@ -23,3 +25,6 @@ export default function Image({
     </div>
   );
 }
+
+const Image = memo(_Image);
+export default Image;

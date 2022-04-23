@@ -1,7 +1,9 @@
+import { memo } from "react";
 import { getTimeDifference } from "./getTimeDifference";
 import RightCaret from "@/assets/raw/right-caret.svg";
 import Image from "@/components/Common/Image";
-export function Right({ date }: { date: string }) {
+
+function _Right({ date }: { date: string }) {
   return (
     <div className="flex-row-align testimonial-row--right">
       <div>{getTimeDifference(date)}</div>
@@ -9,3 +11,5 @@ export function Right({ date }: { date: string }) {
     </div>
   );
 }
+
+export const Right = memo(_Right);

@@ -1,6 +1,7 @@
+import { memo } from "react";
 import { Header, Content, Footer } from "./particles";
-import Loader from "./particles/Content/Loader";
-export function Container() {
+
+function _Container() {
   return (
     <div className="testimonials__container">
       <Header />
@@ -9,3 +10,5 @@ export function Container() {
     </div>
   );
 }
+
+export const Container = memo(_Container);

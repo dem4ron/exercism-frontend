@@ -1,9 +1,10 @@
 import Search from "@/assets/raw/search.svg";
 import Image from "@/components/Common/Image";
 import { useDebounce, useSearchQuery } from "@/hooks";
-import { useState } from "react";
 
-export function SearchInput() {
+import { memo, useState} from "react";
+
+function _SearchInput() {
   const [value, setValue] = useState("");
   const debouncedValue = useDebounce(value, 500);
 
@@ -22,3 +23,5 @@ export function SearchInput() {
     </div>
   );
 }
+
+export const SearchInput = memo(_SearchInput) ;

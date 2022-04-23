@@ -1,8 +1,9 @@
 import DownArrow from "@/assets/raw/down-arrow.svg";
 import LanguageIcon from "@/assets/raw/exercism-language-icon.svg";
 import { useTrackSelector } from "@/hooks";
+import { memo } from "react";
 
-export function LanguageSelectButton({
+function _LanguageSelectButton({
   toggleIsOpen,
   isOpen,
 }: {
@@ -34,3 +35,5 @@ export function LanguageSelectButton({
     </button>
   );
 }
+
+export const LanguageSelectButton = memo(_LanguageSelectButton);

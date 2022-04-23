@@ -10,7 +10,6 @@ import {
 
 export function Header() {
   const [sortObj, setSortObj] = useChangeOrder();
-
   const [isTrackSelectorOpen, toggleTrackSelector] = useToggle();
   const [isSortOptionsOpen, toggleSortOptions] = useToggle();
 
@@ -23,7 +22,6 @@ export function Header() {
           toggleIsOpen={toggleTrackSelector}
           isOpen={isTrackSelectorOpen}
         />
-
         {isTrackSelectorOpen && (
           <TrackSelector toggleIsOpen={toggleTrackSelector} />
         )}

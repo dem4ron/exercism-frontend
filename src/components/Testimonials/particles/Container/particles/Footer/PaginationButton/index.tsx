@@ -1,4 +1,4 @@
-import { MouseEventHandler, ReactNode } from "react";
+import { memo, MouseEventHandler, ReactNode} from "react";
 import LeftArrow from "@/assets/raw/left-arrow.svg";
 import RightArrow from "@/assets/raw/right-arrow.svg";
 
@@ -29,7 +29,7 @@ export function PaginationButton({
   );
 }
 
-function Prev() {
+function _Prev() {
   return (
     <div className="flex-row-align">
       <img
@@ -44,7 +44,9 @@ function Prev() {
   );
 }
 
-function Next() {
+const Prev = memo(_Prev);
+
+function _Next() {
   return (
     <div className="flex-row-align">
       <div>Next</div>
@@ -58,7 +60,10 @@ function Next() {
     </div>
   );
 }
+const Next = memo(_Next);
 
-export function More() {
+function _More() {
   return <div>...</div>;
 }
+
+export const More = memo(_More);

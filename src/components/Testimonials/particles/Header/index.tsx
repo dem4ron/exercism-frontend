@@ -2,12 +2,18 @@ import Image from "@/components/Common/Image";
 import Divider from "@/assets/raw/divider.svg";
 import HappyBadge from "@/assets/raw/happy-badge.svg";
 import { useResults } from "@/hooks";
-export function Header() {
+import { memo } from "react";
+export function _Header() {
   const { results } = useResults();
 
   return (
     <div className="testimonials__header flex-column-align">
-      <Image src={HappyBadge} alt="exercism happy badge" width="64px" height="64px" />
+      <Image
+        src={HappyBadge}
+        alt="exercism happy badge"
+        width="64px"
+        height="64px"
+      />
       <div className="flex-row-align">
         <h1>Testimonials I've left</h1>
         <div className="testimonials__header__counter">
@@ -19,3 +25,5 @@ export function Header() {
     </div>
   );
 }
+
+export const Header = memo(_Header);

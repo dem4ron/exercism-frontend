@@ -1,12 +1,12 @@
 import { Left, Right, Center } from "./particles";
 import { result } from "@/store/storeTypes";
-import { useCallback } from "react";
+import { memo, useCallback } from "react";
 
 interface Props {
   result: result;
 }
 
-export function TestimonialRow({ result }: Props) {
+function _TestimonialRow({ result }: Props) {
   // unpleasently fake routing
   const updateUrlHistory = useCallback(() => {
     window.history.pushState(
@@ -38,3 +38,5 @@ export function TestimonialRow({ result }: Props) {
     </a>
   );
 }
+
+export const TestimonialRow = memo(_TestimonialRow);

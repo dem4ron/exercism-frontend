@@ -1,7 +1,8 @@
 import { useTurnPages } from "@/hooks";
+import { memo } from "react";
 import { PaginationButton, More } from "./PaginationButton";
 
-export function Footer() {
+function _Footer() {
   const { pick, page, maxPage, pageButtons } = useTurnPages();
 
   return (
@@ -43,3 +44,5 @@ export function Footer() {
     </div>
   );
 }
+
+export const Footer = memo(_Footer);
