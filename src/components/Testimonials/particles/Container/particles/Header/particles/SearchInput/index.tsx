@@ -2,7 +2,7 @@ import Search from "@/assets/raw/search.svg";
 import Image from "@/components/Common/Image";
 import { useDebounce, useSearchQuery } from "@/hooks";
 
-import { memo, useState} from "react";
+import { memo, useState } from "react";
 
 function _SearchInput() {
   const [value, setValue] = useState("");
@@ -11,7 +11,11 @@ function _SearchInput() {
   useSearchQuery(debouncedValue);
 
   return (
-    <div className="testimonials__container__header__filter-input flex-row-align">
+    <div
+      data-testid="filter input"
+      aria-label="filter by exercise"
+      className="testimonials__container__header__filter-input flex-row-align"
+    >
       <Image src={Search} alt="magnifier" width="25px" height="25px" />
       <input
         type="text"
@@ -24,4 +28,4 @@ function _SearchInput() {
   );
 }
 
-export const SearchInput = memo(_SearchInput) ;
+export const SearchInput = memo(_SearchInput);

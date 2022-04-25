@@ -15,7 +15,7 @@ function _LanguageSelectButton({ toggleIsOpen, isOpen, onBlur }: Props) {
     <button
       onBlur={onBlur}
       onClick={toggleIsOpen}
-      aria-label="lang-select-button"
+      aria-label="filter by language"
       className="testimonials__container__header__language-select flex-row-align"
     >
       <img

@@ -13,7 +13,7 @@ describe("SortButton", () => {
         toggleIsOpen={testFn}
       />
     );
-    expect(getByLabelText("sort-button")).toBeInTheDocument();
+    expect(getByLabelText("order options")).toBeInTheDocument();
   });
 
   it("should call cb", () => {
@@ -25,7 +25,7 @@ describe("SortButton", () => {
         toggleIsOpen={testFn}
       />
     );
-    fireEvent.click(getByLabelText("sort-button"));
+    fireEvent.click(getByLabelText("order options"));
     expect(testFn).toHaveBeenCalled();
   });
 });

@@ -1,11 +1,12 @@
 import { vi } from "vitest";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import { PaginationButton } from "../index";
 
 const testFn = vi.fn(() => console.log("cb is called"));
 describe("PaginationButton", () => {
   it("should render the PaginationButton", () => {
     const { getByLabelText } = render(<PaginationButton onClick={testFn} />);
+
     expect(getByLabelText("pagination-button")).toBeInTheDocument();
   });
 

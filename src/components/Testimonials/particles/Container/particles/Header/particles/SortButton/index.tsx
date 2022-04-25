@@ -12,7 +12,7 @@ function _SortButton({ sortObj, toggleIsOpen, isOpen, onBlur }: Props) {
   return (
     <button
       onBlur={onBlur}
-      aria-label="sort-button"
+      aria-label="order options"
       className="testimonials__container__header__sort-button flex-row-align"
       onClick={toggleIsOpen}
     >

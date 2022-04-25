@@ -7,13 +7,13 @@ import {
   differenceInYears,
 } from "date-fns";
 
-export function getTimeDifference(date: string) {
-  const minDif = Math.abs(differenceInMinutes(new Date(date), new Date()));
-  const hourDif = Math.abs(differenceInHours(new Date(date), new Date()));
-  const dayDif = Math.abs(differenceInDays(new Date(date), new Date()));
-  const weekDif = Math.abs(differenceInWeeks(new Date(date), new Date()));
-  const monthDif = Math.abs(differenceInMonths(new Date(date), new Date()));
-  const yearDif = Math.abs(differenceInYears(new Date(date), new Date()));
+export function getTimeDifference(past: string, now: number= Date.now()) {
+  const minDif = Math.abs(differenceInMinutes(new Date(past), new Date(now)));
+  const hourDif = Math.abs(differenceInHours(new Date(past), new Date(now)));
+  const dayDif = Math.abs(differenceInDays(new Date(past), new Date(now)));
+  const weekDif = Math.abs(differenceInWeeks(new Date(past), new Date(now)));
+  const monthDif = Math.abs(differenceInMonths(new Date(past), new Date(now)));
+  const yearDif = Math.abs(differenceInYears(new Date(past), new Date(now)));
 
   if (yearDif >= 1) {
     return generateOutputString(yearDif, "year");

@@ -1,21 +1,29 @@
-import {vi} from 'vitest';
-import { render, fireEvent } from "@testing-library/react";
+import { vi } from "vitest";
+import { render, fireEvent, screen } from "@testing-library/react";
 import { LanguageSelectButton } from "../index";
 
-const testFn = vi.fn(()=>console.log('cb is called'))
+const testFn = vi.fn(() => console.log("cb is called"));
 describe("LanguageSelectButton", () => {
   it("should render the langSelectButton", () => {
     const { getByLabelText } = render(
-      <LanguageSelectButton isOpen={true} toggleIsOpen={testFn} />
+      <LanguageSelectButton
+        onBlur={testFn}
+        isOpen={true}
+        toggleIsOpen={testFn}
+      />
     );
-    expect(getByLabelText("lang-select-button")).toBeInTheDocument();
+    expect(getByLabelText("filter by language")).toBeInTheDocument();
   });
 
   it("call cb", () => {
     const { getByLabelText } = render(
-      <LanguageSelectButton isOpen={true} toggleIsOpen={testFn} />
+      <LanguageSelectButton
+        onBlur={testFn}
+        isOpen={true}
+        toggleIsOpen={testFn}
+      />
     );
-    fireEvent.click(getByLabelText("lang-select-button"));
+    fireEvent.click(getByLabelText("filter by language"));
     expect(testFn).toHaveBeenCalled();
   });
 });
