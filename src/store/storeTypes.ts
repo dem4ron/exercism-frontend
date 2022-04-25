@@ -10,7 +10,7 @@ export interface TestimonialsState {
   track: string;
   init:boolean;
   pageTotalCount: number;
-  populateTestimonials: (params: TestimonialsParams) => void;
+  populateTestimonials: (params: TestimonialsParams ) => void;
   turnPage: (pageNumber: number) => void;
   setOrderBy: ({}: OrderByObj) => void;
   setSearchQuery: (val: string) => void;

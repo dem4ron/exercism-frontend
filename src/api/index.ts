@@ -5,7 +5,6 @@ export const ApiService = {
   getTracks: () => api.get("/tracks"),
 };
 
-
 export type order = "newest_first" | "oldest_first";
 
 export interface TestimonialsParams {

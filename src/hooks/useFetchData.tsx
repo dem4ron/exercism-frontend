@@ -6,13 +6,21 @@ export function useFetchData() {
     useCallback((store) => store.populateTestimonials, [])
   );
 
-  const orderBy = useTestimonialsStore(useCallback(store=>store.orderBy,[]))
-  const page= useTestimonialsStore(useCallback(store=>store.page,[]))
-  const searchQuery = useTestimonialsStore(useCallback(store=>store.searchQuery,[]))
-  const track = useTestimonialsStore(useCallback(store=>store.track,[]))
-
+  const orderBy = useTestimonialsStore(
+    useCallback((store) => store.orderBy, [])
+  );
+  const page = useTestimonialsStore(useCallback((store) => store.page, []));
+  const searchQuery = useTestimonialsStore(
+    useCallback((store) => store.searchQuery, [])
+  );
+  const track = useTestimonialsStore(useCallback((store) => store.track, []));
 
   useEffect(() => {
-    populateTestimonials({order:orderBy.value, page, track,exercise:searchQuery });
+    populateTestimonials({
+      order: orderBy.value,
+      page,
+      track,
+      exercise: searchQuery,
+    });
   }, [orderBy, page, searchQuery, track]);
 }
