@@ -10,8 +10,9 @@ import {
 
 export function Header() {
   const [sortObj, setSortObj] = useChangeOrder();
-  const [isTrackSelectorOpen, toggleTrackSelector] = useToggle();
-  const [isSortOptionsOpen, toggleSortOptions] = useToggle();
+  const [isTrackSelectorOpen, toggleTrackSelector, closeTrackSelector] =
+    useToggle();
+  const [isSortOptionsOpen, toggleSortOptions, closeSortOptions] = useToggle();
 
   const { status } = useResults();
 
@@ -19,6 +20,7 @@ export function Header() {
     <div className="testimonials__container__header flex-row-align">
       <div className="testimonials__container__header--left flex-row-align">
         <LanguageSelectButton
+          onBlur={() => closeTrackSelector(200)}
           toggleIsOpen={toggleTrackSelector}
           isOpen={isTrackSelectorOpen}
         />
@@ -31,6 +33,7 @@ export function Header() {
 
       <div className="testimonials__container__header__sorter">
         <SortButton
+          onBlur={() => closeSortOptions(200)}
           toggleIsOpen={toggleSortOptions}
           isOpen={isSortOptionsOpen}
           sortObj={sortObj}

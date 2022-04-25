@@ -3,16 +3,17 @@ import LanguageIcon from "@/assets/raw/exercism-language-icon.svg";
 import { useTrackSelector } from "@/hooks";
 import { memo } from "react";
 
-function _LanguageSelectButton({
-  toggleIsOpen,
-  isOpen,
-}: {
+interface Props {
   isOpen: boolean;
   toggleIsOpen: () => void;
-}) {
+  onBlur: () => void;
+}
+
+function _LanguageSelectButton({ toggleIsOpen, isOpen, onBlur }: Props) {
   const [track] = useTrackSelector();
   return (
     <button
+      onBlur={onBlur}
       onClick={toggleIsOpen}
       aria-label="lang-select-button"
       className="testimonials__container__header__language-select flex-row-align"

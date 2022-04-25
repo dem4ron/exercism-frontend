@@ -7,6 +7,7 @@ describe("SortButton", () => {
   it("should render the SortButton", () => {
     const { getByLabelText } = render(
       <SortButton
+        onBlur={testFn}
         isOpen={true}
         sortObj={{ label: "Newest first", value: "newest_first" }}
         toggleIsOpen={testFn}
@@ -18,6 +19,7 @@ describe("SortButton", () => {
   it("should call cb", () => {
     const { getByLabelText } = render(
       <SortButton
+        onBlur={testFn}
         isOpen={true}
         sortObj={{ label: "Newest first", value: "newest_first" }}
         toggleIsOpen={testFn}

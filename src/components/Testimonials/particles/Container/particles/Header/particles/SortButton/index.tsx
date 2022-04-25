@@ -5,11 +5,13 @@ interface Props {
   sortObj: { label: string; value: string };
   toggleIsOpen: () => void;
   isOpen: boolean;
+  onBlur:()=>void
 }
 
-function _SortButton({ sortObj, toggleIsOpen, isOpen }: Props) {
+function _SortButton({ sortObj, toggleIsOpen, isOpen, onBlur }: Props) {
   return (
     <button
+      onBlur={onBlur}
       aria-label="sort-button"
       className="testimonials__container__header__sort-button flex-row-align"
       onClick={toggleIsOpen}
