@@ -29,9 +29,11 @@ export const useTestimonialsStore = create<TestimonialsState>()(
             "Fetch testimonials"
           );
           set({ status: "fulfilled", init: false }, false, "End loading");
-        } catch (error) {
+        } catch (error: any) {
           set({ status: "rejected" }, false, "Request got rejected/cancelled");
-          console.log(error);
+          if (error && error.message !== "canceled") {
+            console.error(error);
+          }
         }
       },
 
