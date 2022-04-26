@@ -47,7 +47,7 @@ export function Header() {
         )}
       </div>
 
-      {status === "loading" && <Loader />}
+      {(status === "loading" || status === "rejected") && <Loader />}
     </div>
   );
 }
