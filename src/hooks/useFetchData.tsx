@@ -16,11 +16,19 @@ export function useFetchData() {
   const track = useTestimonialsStore(useCallback((store) => store.track, []));
 
   useEffect(() => {
-    populateTestimonials({
-      order: orderBy.value,
-      page,
-      track,
-      exercise: searchQuery,
-    });
+    const controller = new AbortController();
+    populateTestimonials(
+      {
+        order: orderBy.value,
+        page,
+        track,
+        exercise: searchQuery,
+      },
+      controller.signal
+    );
+
+    return () => {
+      controller.abort();
+    };
   }, [orderBy, page, searchQuery, track]);
 }

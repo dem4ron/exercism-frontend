@@ -14,7 +14,7 @@ export interface TestimonialsParams {
   exercise?: string;
 }
 
-function getTestimonials(params: TestimonialsParams) {
+function getTestimonials(params: TestimonialsParams, signal: AbortSignal) {
   const { page, order, track, exercise } = params;
   const TESTIMONIALS_URL = `/hiring/testimonials`;
 
@@ -26,5 +26,5 @@ function getTestimonials(params: TestimonialsParams) {
   if (exercise) {
     url = `${url}&exercise=${exercise}`;
   }
-  return api.get(url);
+  return api.get(url, { signal });
 }

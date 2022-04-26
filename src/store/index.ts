@@ -1,5 +1,5 @@
 import { ApiService } from "@/api";
-import { TestimonialsState, Testimonials } from "./storeTypes";
+import { TestimonialsState } from "./storeTypes";
 import create from "zustand";
 import { devtools } from "zustand/middleware";
 import { SORT_OPTIONS } from "@/components/Testimonials/particles/Container/particles/Header/particles";
@@ -15,11 +15,11 @@ export const useTestimonialsStore = create<TestimonialsState>()(
       pageTotalCount: 0,
       init: true,
       testimonials: null,
-      populateTestimonials: async (params) => {
+      populateTestimonials: async (params, signal) => {
         set({ status: "loading" }, false, "Start loading");
-        let res = await ApiService.getTestimonials(params);
         window.history.replaceState({ page: null }, "_", "/");
         try {
+          let res = await ApiService.getTestimonials(params, signal);
           set(
             {
               testimonials: res.data.testimonials,
@@ -29,8 +29,9 @@ export const useTestimonialsStore = create<TestimonialsState>()(
             "Fetch testimonials"
           );
           set({ status: "fulfilled", init: false }, false, "End loading");
-        } catch {
+        } catch (error) {
           set({ status: "rejected" }, false, "Request got rejected");
+          console.log(error);
         }
       },
 
