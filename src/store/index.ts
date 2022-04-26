@@ -30,7 +30,7 @@ export const useTestimonialsStore = create<TestimonialsState>()(
           );
           set({ status: "fulfilled", init: false }, false, "End loading");
         } catch (error) {
-          set({ status: "rejected" }, false, "Request got rejected");
+          set({ status: "rejected" }, false, "Request got rejected/cancelled");
           console.log(error);
         }
       },
